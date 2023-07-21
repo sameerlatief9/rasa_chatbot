@@ -1,0 +1,92 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - weather
+  - city
+  - satisfy
+  - wrong_city
+  - reset
+  #- best_beaches
+  - any_question
+  - about_me
+ # - name
+
+actions:
+  - utter_city
+  - utter_temp
+  - action_weather_api
+  - utter_city_not_found
+  - utter_happy
+ # - utter_best_beaches
+  - bard_action
+  - utter_me
+  - time_greet
+ # - utter_name
+ 
+
+ 
+
+responses:
+  # utter_name:
+  # - text: "Welcome {name} ! I will be happy to guide you in Goa"
+   
+  utter_me:
+  - text: "I am  rasa chatbot created by 5 members Amin ul haq, Sameer Latief, Abhishek, Alvira and Rutuja"
+  - text: "I am not human but a chatbot to guide tourist, created by Amin, Sameer, Abhishek, Alvira and Rutuja"
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+ # utter_happy:
+ # - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_temp:
+   # - text: "the  temperature is {temp}"
+    - text: "the temperature in {city}  is {temp}°C and humidity is {hum}"
+    #- text: "temperature is {temp}"
+  utter_satisfy:
+    - text: "welcome"
+  
+  # utter_best_beaches:
+  #   - text: "Best beaches near you are Cansaulim beach,Sinquerim Beach and Majorda Beach.\nSinquerim Beach and Majorda Beach have rating 4.5 \n Cansaulim Beach have rating 4.3.\nSome photo of Cansaulim beach is given :" 
+  #     image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/43/63/27/cansaulim-beach.jpg?w=1200&h=-1&s=1"  
+  #   - text: "Best beaches near you are Cansaulim beach,Sinquerim Beach and Majorda Beach. Sinquirim beach is given below"  
+  #     image: "https://goa-tourism.org.in/images/places-to-visit/headers/sinquerim-beach-goa-timings-entry-fee-goa-tourism-header-cr-hrishikesh-sharma.jpg"
+  #   - text: "Best beaches near you are Cansaulim beach,Sinquerim Beach and Majorda Beach. This is Majorda Beach having 4.5 star rating"  
+  #     image: "https://www.tourmyindia.com/socialimg/majorda-beach-goa.jpg"
+
+  
+  
+  utter_happy:
+    - text: "cheer up be happy"
+  utter_city:
+    - text: " which city temperature you want"
+    - text: " of where?"
+    - text: "in which city"
+    - text: "can you provide me city name to know about weather?"
+  utter_city_not_found:
+    - text: "Invalid City! I couldn't find the temperature for the provided city."
+  
+   # - text: "Best beaches near you are Cansaulim beach,Sinquerim Beach and Majorda Beach.\nSinquerim Beach and Majorda Beach have rating 4.5 \n Cansaulim Beach have rating 4.3.\nSome photos of Cansaulim,Sinquerim Beach and Majorda Beach are given below respectively" 
+   # - image: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/43/63/27/cansaulim-beach.jpg?w=1200&h=-1&s=1"
+  
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,81 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+   - intent: greet
+   - action: time_greet
+  #  - intent: name
+  #  - action: utter_name
+   - intent: mood_great
+   - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: time_greet
+  # - intent: name
+  # - action: utter_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: time_greet
+  # - intent: name
+  # - action: utter_name
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: weather_info
+  steps:
+    - intent: greet
+    - action: time_greet
+    # - intent: name
+    # - action: utter_name
+    - intent: weather
+    - action: utter_city
+    - intent: city
+    - action: action_weather_api
+    - intent: satisfy
+    - action: utter_satisfy
+    - action: utter_goodbye
+
+- story: Handle_wrong_city
+  steps:
+    - intent: wrong_city
+    - action: utter_city_not_found
+    - intent: satisfy
+    - action: utter_satisfy
+
+# - story: best_beaches_around
+#   steps:
+#     - intent: best_beaches
+#     - action: utter_best_beaches
+#     - intent: satisfy
+#     - action: utter_satisfy
+- story: any_question_to_ask
+  steps:
+    - intent: greet
+    - action: time_greet
+    # - intent: name
+    # - action: utter_name
+    - intent: any_question
+    - action: bard_action
+    - intent: satisfy
+    - action: utter_satisfy
+    - action: utter_goodbye
+
+- story: my_info
+  steps:
+    - intent: greet
+    - action: time_greet
+    - intent: about_me
+    - action: utter_me

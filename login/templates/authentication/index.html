@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .alert {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .alert-success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+
+        .alert-danger {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        button a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        .rw-conversation-container .rw-header{background-color:hsl(239, 100%, 51%);}
+        .rw-conversation-container .rw-messages-container .rw-message .rw-client{background-color: hsl(210, 94%, 48%);}
+        .rw-launcher{background-color: hsl(223, 94%, 50%);}
+        .rw-conversation-container .rw-reply{background-color: hsl(120, 90%, 48%); border: 1px solid hsl(250, 69%, 61%);}
+        .rw-conversation-container{width: 500px; height: 500px; }
+        
+      
+    </style>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <img class="logo" src="https://static.vecteezy.com/system/resources/previews/000/511/437/original/travel-tourism-logo-isolated-on-white-background-vector.jpg" alt="Logo">
+
+    <h3>Welcome to the chatbot guide</h3>
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <script>
+        localStorage.clear()
+      window.onload = function() {
+      window.localStorage.clear();
+  };
+  custom="to guide tourist"
+      !(function () {
+          let e = document.createElement("script"),
+            t = document.head || document.getElementsByTagName("head")[0];
+          (e.src =
+           "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
+            // Replace 1.x.x with the version that you want
+         
+            (e.async = !0),
+            (e.onload = () => {
+              window.WebChat.default(
+                {
+                      initPayload: "/greet",
+                      title: "Rasa Tour Bot",
+                      subtitle: "I am here to guide tourist",
+                      profileAvatar: "https://cdn3d.iconscout.com/3d/premium/thumb/chat-bot-7229469-5862322.png?f=webp",
+                      openLauncherImage: "https://toppng.com/uploads/preview/curved-white-arrow-png-white-up-arrow-icon-115628934127okaaohywg.png",
+                      closeImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ60amh5fbhpqDwiaFnqVfAughBf19mJGSNVw&usqp=CAU",
+                      showMessageDate: true,
+                      inputTextFieldHint: "What's in your mind?...",
+                      embedded: false,            
+                      displayUnreadCount: false,
+                      customMessageDelay: (message) => {
+                        let delay = message.length * 40;
+                        if (delay > 3 * 1000) delay = 3 * 1000;
+                        if (delay < 800) delay = 800;
+                        return delay;
+                      },
+        
+    
+   
+    connectingText: 'Waiting for server...',
+    fullScreenMode: true,
+    hideWhenNotConnected: true,
+    autoClearCache: true,
+    connectOn: 'mount',
+    onSocketEvent: {},
+    protocol: 'socketio',
+    socketUrl: 'http://localhost:5005',
+    protocolOptions: {},
+    badge: 0,
+    embedded: false,
+    params: {
+      storage: 'local'
+    },
+    docViewer: true,
+    showCloseButton: true,
+    showFullScreenButton: true,
+    
+    showMessageDate: true,
+    
+    tooltipPayload: null,
+    tooltipDelay: 500,
+    withRules: true,
+    rules: null,
+    triggerEventListenerUpdateRate: 500
+  
+    /* idr sy dusra start ha*/
+              /*    initPayload:"/greet",
+                  customData: { language: "en" },
+                  socketUrl: "ws://localhost:5005",
+                  // add other props here
+                  title: "Rasa Tour Bot",
+                  subtitle: "Say hi and get started",
+                      profileAvatar: "avatar.png",
+                      openLauncherImage: "comment.jpeg",
+                      closeImage: "down.jpeg",
+                      showMessageDate: true,
+                      inputTextFieldHint: "What's in your mind?...",
+                      embedded: false,
+                      showFullScreenButton: false,
+                      displayUnreadCount: false,
+                      customMessageDelay: (message) => {
+                        let delay = message.length * 40;
+                        if (delay > 3 * 1000) delay = 3 * 1000;
+                        if (delay < 800) delay = 800;
+                        return delay;
+                      }
+  */
+  
+                },
+                null
+              );
+            }),
+            t.insertBefore(e, t.firstChild);
+        })();
+        
+        </script>
+    
+    <button type="submit"><a href="/signout">Sign Out</a></button>
+    {% else %}
+    <button type="submit"><a href="/signup">Sign Up</a></button>
+    <br/>
+    <br/>
+    <button type="submit"><a href="/signin">Sign In</a></button>
+    {% endif %}
+</body>
+</html>

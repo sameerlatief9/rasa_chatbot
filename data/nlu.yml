@@ -1,0 +1,223 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so sad
+    
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: weather
+  examples: |
+    - what is the weather?
+    - weather?
+    - i want to know about weather
+    - what is the temperature
+    - what's the weather
+    - what's the temperature outside
+
+- intent: satisfy
+  examples: |
+    - ok
+    - okay
+    - thanks
+    - thank you for the information
+    - thanks for info
+    - thank you bro
+    - thank you
+
+- intent: city
+  examples: |
+    - delhi
+    - goa
+    - ponda
+    - panjim
+    - jammu
+    - srinagar
+    - madgaon
+    - madgao
+
+- intent: wrong_city
+  examples: |
+    - abc
+    - xyz
+    - zxvcbv
+    - qwert
+    - asdf
+    - ghjkl
+    - mnbv
+    - zxcv
+    - nvchsbc
+
+# - intent: best_beaches
+#   examples: |
+#     - best beaches near me
+#     - what are the best beaches near me
+#     - best beaches around me
+#     - can you tell me best beaches around me
+#     - can you tell me best beaches near me
+#     - provide me detail of best beaches near me
+
+
+- intent: any_question
+  examples: |
+    - beaches around me
+    - best beaches around me
+    - beaches near me
+    - petrol pumps near me
+    - hotels near me
+    - best hotel with rating near me
+    - best restaurants near me
+    - best hospitals near me
+    - emergency hospital around me
+    - distance between two cities
+    - i want to go to anycity from anywhere
+    - how to go to ponda 
+    - where is this  place
+    - where this located
+    - waterfall aaround me
+    - which is the best waterfall
+    - where is waterfall
+    - i am hungry
+    - i am angry
+    - i am lost
+    - i want to know route
+    - i want you to take me
+    - find watefals, petrol pump, hospital for me
+    - couples hotels, restaurant
+    - hotel for 2 or 3 people
+    - hotel for friends
+    - family stay in goa
+    - i want to eat
+    - i want some drink
+    - i am thirsty
+    - i want to swim
+    - i want street food
+    - i want to know about local cuisine, culture , movies theatre
+    - what are the cinemas near me
+    - what are the pharmacy shop near me
+    - medicine needed for me
+    - i am injured where to go what to do
+    - railway station, Airport , bus station, auto rikshaw tuktuk, E bus
+    - kadamba near me
+    - local bus route
+    - local tax route
+    - local ponds, bridges , forts, temples, churches, mosque, masjid, religion
+    - shopping in malls
+    - best malls
+    - cheaps and best shopping Mall in goa
+    - local market of Goa
+    - repair shop near me
+    - my bike is not functioning properly tell me mechanic near me
+    - mai gumgya hu
+    - give me image of beach, petrol pump, hotels
+    - i want image of this beach
+- intent: about_me
+  examples: |
+     - who are you?
+     - what is your name?
+     - who created you
+     - who made you
+     - are you bard?
+     - you are bard
+     - u are bard
+     - u r bard
+     - u r Bard?
+    
+# - intent: name
+#   examples: |
+#      - my name is
+#      - my nam is
+#      - amin
+#      - abhishek
+#      - alvira
+#      - sameer
+#      - maryushka
+#      - marushka
+#      - maruska
+
+
+   
+    
